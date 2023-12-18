@@ -1,0 +1,20 @@
+[package]
+name = "bevy_quite_okay"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bevy = "0.12"
+anyhow = "1"
+rapid-qoi = { version = "0.6", optional = true }
+qoaudio = { version = "0.7", features = ["rodio"], optional = true }
+
+[features]
+default = ["qoi", "qoa"]
+qoi = ["dep:rapid-qoi"]
+qoa = ["dep:qoaudio"]
+
+[[example]]
+name = "loading"
+path = "examples/loading.rs"
+required-features = ["qoi", "qoa"]
