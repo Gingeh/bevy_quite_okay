@@ -9,6 +9,7 @@ use bevy::{
 };
 use rapid_qoi::Qoi;
 
+/// Add this plugin to enable loading .qoi files.
 pub struct QoiPlugin;
 
 impl Plugin for QoiPlugin {

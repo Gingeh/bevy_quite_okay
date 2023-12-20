@@ -9,6 +9,7 @@ use bevy::{
 };
 use qoaudio::{QoaDecoder, QoaRodioSource};
 
+/// Add this plugin to enable loading .qoa files.
 pub struct QoaPlugin;
 
 impl Plugin for QoaPlugin {
@@ -45,6 +46,9 @@ impl AssetLoader for QoaLoader {
     }
 }
 
+/// A source of decodable QOA data.
+///
+/// Use this type instead of `AudioSource`.
 #[derive(Asset, TypePath, Clone)]
 pub struct QoaSource(Arc<Vec<u8>>);
 
